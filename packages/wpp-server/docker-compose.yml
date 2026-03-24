@@ -1,0 +1,9 @@
+services:
+  wpp-server:
+    build:
+      context: ../..
+      dockerfile: packages/wpp-server/Dockerfile
+    env_file: .env
+    volumes:
+      - ./auth_state:/app/auth_state
+    restart: unless-stopped

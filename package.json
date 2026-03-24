@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "nx build wpp-server",
+    "start": "node packages/wpp-server/dist/index.js",
+    "start:dev": "nx build wpp-server && node --watch packages/wpp-server/dist/index.js",
+    "start:prod": "node packages/wpp-server/dist/index.js",
+    "test": "nx test wpp-server --no-coverage",
+    "test:cov": "nx test wpp-server --coverage"
   },
   "keywords": [],
   "author": "",
@@ -37,5 +42,11 @@
     "typescript-eslint": "^8.40.0"
   },
   "nx": {},
-  "dependencies": {}
+  "dependencies": {
+    "@nestjs/common": "^11.1.17",
+    "@nestjs/core": "^11.1.17",
+    "pino": "^10.3.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2"
+  }
 }

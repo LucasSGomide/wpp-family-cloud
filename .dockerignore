@@ -1,0 +1,12 @@
+node_modules
+**/node_modules
+dist
+**/dist
+auth_state
+**/auth_state
+.git
+**/*.spec.ts
+test-output
+**/test-output
+.env
+**/.env
